@@ -1,0 +1,58 @@
+<html ng-app='myApp'>
+<head>
+	<title>Angular Revision Beginning to End</title>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/first.js"></script>
+</head>
+<body>
+
+<div ng-controller='myCtrl'>{{x.name}}
+{{30*40}} {{35==22}} {{35==35}}
+	<ul>
+<li>{{y[0]}}</li>
+<li>{{y[1]}}</li>
+<li>{{y[2]}}</li>
+	</ul>
+
+<li style='color:{{item}}'ng-repeat='item in z'>{{item}}-{{$index}} in color<button ng-click='remove($index)'>Delete</button></li>
+<button ng-click='click()'>alerter</button>
+</div>
+
+
+<div ng-controller='secondCtrl'>
+<ul>
+<li ng-repeat='product in products | limitTo:x | orderBy:"name"'>{{product.name | uppercase}} - {{product.price | currency}} - {{product.quantity}}</li>
+</ul>
+
+<button ng-click='pages(3)'>Page 3</button>
+<button ng-click='pages(4)'>Page 4</button>
+</div>
+
+
+<div ng-controller='thirdCtrl'>
+<img ng-src={{image}}>
+<button ng-click='traffic("red")'>Red</button>
+<button ng-click='traffic("amber")'>Amber</button>
+<button ng-click='traffic("green")'>Green</button>
+<br>
+
+<li ng-repeat='product in products | orderBy:"name"'>{{product.name | capitalize | greetings}} - {{product.price | currency}} - {{product.quantity}}</li>
+</div>
+
+
+<div ng-controller='fourthCtrl'>
+<ul>
+<li ng-repeat='product in products'><button ng-click='edit($index)'>Edit List</button>
+	{{product.name |capitalize}} - {{product.price | currency}} - {{product.quantity}}
+	<button ng-click='del($index)'>Delete</button>
+</li>
+</ul>
+
+Enter the product name:<input type='text' ng-model='pname'>
+Enter the product price:<input type='text' ng-model='pprice'>
+Enter the product quantity:<input type='text' ng-model='pquan'>
+<button ng-click='adder()' ng-disabled="!pname || !pprice || !pquan">Add To List</button>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html ng-app='myApp'>
+<head>
+	<title>Saving the Value</title>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/save.js"></script>
+</head>
+<body>
+
+<div ng-controller='myCtrl'>
+<label>Hello:</label><input type='text' ng-model='planets'><button ng-click='add()'>Save</button>
+<br><br><br><br><br>
+{{savings}}
+<br><br><br><br>
+
+<select>
+	<option ng-repeat='names in savings'>{{names.name}}</option>
+
+</select>
+</div>
+</body>
+</html>

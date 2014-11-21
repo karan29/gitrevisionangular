@@ -1,0 +1,28 @@
+<html ng-app='myApp'>
+<head>
+	<title>Multiple Choice Questions</title>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/ques.js"></script>
+</head>
+<body>
+
+<div ng-controller='myCtrl'>
+
+<div ng-show='hider'>
+Question:{{ques[ind].question}}?<br><br>
+
+<button ng-click='ques[ind].usel="A"'>A:{{ques[ind].optionA}}</button><br>
+<button ng-click='ques[ind].usel="B"'>B:{{ques[ind].optionB}}</button><br>
+<button ng-click='ques[ind].usel="C"'>C:{{ques[ind].optionC}}</button><br>
+<button ng-click='ques[ind].usel="D"'>D:{{ques[ind].optionD}}</button><br><br>
+
+<button ng-click='next()'>Next Question</button>
+</div>
+
+
+<div ng-hide='hider'>
+You have answered {{c}} of {{ques.length}}answers correctly.
+</div>
+</div>
+</body>
+</html>

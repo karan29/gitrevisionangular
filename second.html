@@ -1,0 +1,58 @@
+<html ng-app='myApp'>
+<head>
+	<title>Angular Revision Continue</title>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/second.js"></script>
+</head>
+<body>
+<div ng-controller='frstCtrl'>
+<li ng-repeat='product in products'>{{product.name}} {{product.price}} {{product.quantity}}</li>
+
+<button ng-click='getData()'>Get Data</button>
+</div>
+
+<div ng-controller='secondCtrl'>{{x}}</div>
+<div ng-controller='thirdCtrl'>{{x}}</div>
+<div ng-controller='fourthCtrl'>{{x}}<br>{{y}}</div><br><br><br>
+
+
+<div ng-controller='todoCtrl'>
+<label>Enter the task:</label><input type='text' ng-model='new_task'><button ng-click='add()'>Add Task</button><br>
+
+<div><h2>Pending Task</h2>
+<ul style='list-style:none'>
+<li ng-repeat='task in pending'><input type='checkbox'  ng-click='transfer($index)'>{{task}}<button ng-click='del($index,true)'>Delete Task</button></li>
+</ul>
+</div>
+
+
+<div><h2>Completed Task</h2>
+<ul style='list-style:none'>
+<li ng-repeat='task in completed'><input type='checkbox'  ng-click='utran($index)'>{{task}}<button ng-click='del($index,false)'>Delete Task</button></li>
+</ul>
+</div>
+
+<h5>Total:</h5>{{pending.length+completed.length}} - Pending: {{pending.length}} - Completed:{{completed.length}}
+</div>
+<br><br><br>
+
+
+<div controller='Ctrl'>
+<form name='my_form'>
+<label>First Name:</label><input type='text' name='fname' ng-model='data.fname' ng-minlength='4' ng-pattern='/^[A-Z]/' required='true'>
+
+<span ng-show='my_form.fname.$pristine'>This field has not been touched & first letter capital</span><br>
+
+<span ng-show='my_form.fname.$error.minlength'>please enter 4 character</span><br>
+
+<span ng-show='my_form.fname.$error.required && my_form.fname.$dirty'>field cannot be blank</span><br>
+
+<button ng-disabled='my_form.$invalid'>submit button</button>
+
+
+</form>
+</div>
+
+
+</body>
+</html>

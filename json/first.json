@@ -1,0 +1,22 @@
+[ 
+    {
+        "name": "milk",
+        "price": 2.99,
+        "quantity": 5
+    },
+    {
+        "name": "bread",
+        "price": 3.4,
+        "quantity": 7
+    },
+    {
+        "name": "eggs",
+        "price": 5.69,
+        "quantity": 2
+    },
+    {
+        "name": "fruit",
+        "price": 2.99,
+        "quantity": 3
+    }
+]

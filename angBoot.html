@@ -1,0 +1,38 @@
+<html ng-app='myApp'>
+<head>
+	<title>Angular Bootsrtrap / Ajax </title>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angBoot.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+
+<div class-'col-lg-12 first' ng-controller='myCtrl'>
+
+<div ng-hide='val'>
+<ul style='list-style:none'>
+<li ng-repeat='product in products'>
+	{{product.name}} - {{product.price|currency}}
+<button class='glyphicon glyphicon-minus' ng-click='(product.qty > 0)? (product.qty=product.qty-1):(product.qty=0)'></button>
+<input type='text' ng-init='product.qty=0' style='width:20px' ng-model='product.qty'>
+<button class= 'glyphicon glyphicon-plus' ng-click='product.qty=product.qty+1'></button>
+</li>
+</ul>
+<button ng-click='buy()'>Buy</button>
+</div>
+
+
+<div ng-show='val'>
+	<li>Name     Price      Quantity</li>
+<li ng-repeat='product in products'>{{product.name}}   {{product.price|currency}}   {{product.qty}}  -Your Total: {{product.price*product.qty|currency}}</li>
+<p ng-model='amount'>Total Amount to be Paid {{amount}}</p>
+</div>
+
+</div>
+
+</body>
+</html>
